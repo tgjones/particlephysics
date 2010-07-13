@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticlePhysics", "ParticlePhysics\ParticlePhysics.csproj", "{699F70C1-0C58-4689-9D3F-1BF754CAB55E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{699F70C1-0C58-4689-9D3F-1BF754CAB55E}.Debug|x86.ActiveCfg = Debug|x86
+		{699F70C1-0C58-4689-9D3F-1BF754CAB55E}.Debug|x86.Build.0 = Debug|x86
+		{699F70C1-0C58-4689-9D3F-1BF754CAB55E}.Release|x86.ActiveCfg = Release|x86
+		{699F70C1-0C58-4689-9D3F-1BF754CAB55E}.Release|x86.Build.0 = Release|x86
+		{20FF17F2-4411-4D3F-B0CD-719575D62A7B}.Debug|x86.ActiveCfg = Debug|x86
+		{20FF17F2-4411-4D3F-B0CD-719575D62A7B}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
