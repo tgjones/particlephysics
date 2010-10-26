@@ -7,7 +7,6 @@ namespace Particles
     {
         private const int SIZE = 100;
 
-        private VertexDeclaration _vertexDeclaration;
         private VertexBuffer _vertexBuffer;
         private IndexBuffer _indexBuffer;
         private int _numVertices;
@@ -25,7 +24,7 @@ namespace Particles
         {
             base.LoadContent();
 
-            _basicEffect = new BasicEffect(GraphicsDevice, null);
+            _basicEffect = new BasicEffect(GraphicsDevice);
             _basicEffect.EnableDefaultLighting();
 
             _numVertices = SIZE * SIZE;
@@ -46,7 +45,7 @@ namespace Particles
 
             _vertexBuffer = new VertexBuffer(
                 this.GraphicsDevice,
-                typeof(VertexPositionNormalTexture),
+                VertexPositionNormalTexture.VertexDeclaration,
                 vertices.Length,
                 BufferUsage.WriteOnly);
             _vertexBuffer.SetData<VertexPositionNormalTexture>(vertices);
@@ -76,9 +75,6 @@ namespace Particles
                 BufferUsage.WriteOnly);
             _indexBuffer.SetData<short>(indices);
 
-            _vertexDeclaration = new VertexDeclaration(
-                this.GraphicsDevice, VertexPositionNormalTexture.VertexElements);
-
             Texture2D texture = Game.Content.Load<Texture2D>(@"Textures\dirt");
 
             _basicEffect.Texture = texture;
@@ -95,15 +91,13 @@ namespace Particles
             base.Draw(gameTime);
 
             //this.GraphicsDevice.RenderState.FillMode = FillMode.WireFrame;
-            this.GraphicsDevice.VertexDeclaration = _vertexDeclaration;
-            this.GraphicsDevice.Vertices[0].SetSource(_vertexBuffer, 0, VertexPositionNormalTexture.SizeInBytes);
+            this.GraphicsDevice.SetVertexBuffer(_vertexBuffer);
             this.GraphicsDevice.Indices = _indexBuffer;
 
             Effect effect = _basicEffect;
-            effect.Begin();
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
-                pass.Begin();
+                pass.Apply();
 
                 this.GraphicsDevice.DrawIndexedPrimitives(
                     PrimitiveType.TriangleStrip,
@@ -112,10 +106,7 @@ namespace Particles
                     _numVertices,
                     0,
                     _numIndices - 2);
-
-                pass.End();
             }
-            effect.End();
         }
 
         public void UpdateCamera(Matrix view, Matrix projection)

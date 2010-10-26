@@ -43,7 +43,7 @@ namespace Particles
 		/// </summary>
 		protected override void Initialize()
 		{
-			_view = Matrix.CreateLookAt(new Vector3(50, 5, -50), new Vector3(25, 0, -25), Vector3.Up);
+			_view = Matrix.CreateLookAt(new Vector3(30, 10, -30), new Vector3(25, 0, -25), Vector3.Up);
 			_projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, GraphicsDevice.Viewport.Width / (float) GraphicsDevice.Viewport.Height, 1.0f, 100.0f);
 
 			_particleSystem = new ParticleSystem();

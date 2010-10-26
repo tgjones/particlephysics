@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticlePhysics", "ParticlePhysics\ParticlePhysics.csproj", "{699F70C1-0C58-4689-9D3F-1BF754CAB55E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticlePhysicsContent", "ParticlePhysics\Content\ParticlePhysicsContent.contentproj", "{20FF17F2-4411-4D3F-B0CD-719575D62A7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
